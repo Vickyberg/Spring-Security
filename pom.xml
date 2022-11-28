@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.volacode</groupId>
-    <artifactId>springsecuritybasics</artifactId>
+    <artifactId>springsecsection2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springsecuritybasics</name>
-    <description>springsecuritybasics</description>
+    <name>springsecsection2</name>
+    <description>Demo project  for SpringBoot &amp; Spring Security</description>
     <properties>
         <java.version>17</java.version>
     </properties>
