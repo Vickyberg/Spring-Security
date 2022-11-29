@@ -8,7 +8,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class ProjectSecurityConfig {
 
-    @Bean
+   @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                         .antMatchers("/myAccount","/myBalance","/myCards","/myLoans").authenticated()
@@ -17,5 +17,16 @@ public class ProjectSecurityConfig {
                 and().httpBasic();
 
         return http.build();
+
     }
+
+    /*@Bean
+    SecurityFilterChain defaultSecurityToDenyAll(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.authorizeRequests().anyRequest().denyAll().and().httpBasic().and().formLogin();
+        return httpSecurity.build();
+    }
+    
+     */
+
+
 }
