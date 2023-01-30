@@ -8,6 +8,6 @@ public class AccountController {
 
     @GetMapping("/myAccount")
     public  String getAccountDetails(){
-        return "Here is your account details from the DBR";
+        return "Here is your account details from the DB";
     }
 }
