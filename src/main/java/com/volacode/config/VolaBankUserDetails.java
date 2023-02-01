@@ -22,9 +22,9 @@ public class VolaBankUserDetails implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        String userName, password;
+        String password, userName;
         List<GrantedAuthority> authorities;
-        List<Customer> customers= null;
+        List<Customer> customers = customerRepository.findByEmail(username);
         if(customers.size() == 0){
             throw new UsernameNotFoundException("User details not found for the user!" + username);
         }else {
@@ -32,6 +32,7 @@ public class VolaBankUserDetails implements UserDetailsService {
             password = customers.get(0).getPwd();
             authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(customers.get(0).getRole()));
+
         }
 
         return new User(username, password, authorities);
