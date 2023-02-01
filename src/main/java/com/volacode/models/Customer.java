@@ -1,23 +1,24 @@
 package com.volacode.models;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
+@Entity
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-    String email;
-    String pwd;
-    String role;
+   private Long id;
+    private String email;
+    private String pwd;
+    private String role;
 
 }

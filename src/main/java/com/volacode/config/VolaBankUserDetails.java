@@ -24,7 +24,7 @@ public class VolaBankUserDetails implements UserDetailsService {
 
         String userName, password;
         List<GrantedAuthority> authorities;
-        List<Customer> customers= customerRepository.findByEmail(username);
+        List<Customer> customers= null;
         if(customers.size() == 0){
             throw new UsernameNotFoundException("User details not found for the user!" + username);
         }else {
