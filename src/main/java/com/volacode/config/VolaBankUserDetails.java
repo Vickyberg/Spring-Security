@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VolaBankUserDetails implements UserDetailsService {
@@ -28,6 +29,7 @@ public class VolaBankUserDetails implements UserDetailsService {
         if(customers.size() == 0){
             throw new UsernameNotFoundException("User details not found for the user!" + username);
         }else {
+
             userName = customers.get(0).getEmail();
             password = customers.get(0).getPwd();
             authorities = new ArrayList<>();

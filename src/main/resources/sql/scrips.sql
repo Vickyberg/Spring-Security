@@ -10,3 +10,14 @@
 #                              primary key (`id`)
 #
 # );
+
+CREATE TABLE  `customer`(
+    `id` int NOT NULL  AUTO_INCREMENT,
+    `email` varchar(45) NOT NULL ,
+    `pwd` varchar(100) NOT NULL ,
+    `role` varchar(45) NOT NULL ,
+    primary key (`id`)
+);
+
+insert into `customer` (`email`, `pwd`, `role`)
+VALUES ('olamide124@gmail.com','54321', 'admin')
